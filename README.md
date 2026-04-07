@@ -8,7 +8,7 @@
 ## Architecture
 lib/
 ├── main.dart
-├── data/
+data/
 │   ├── local/   SQLite via sqflite (cart, orders, promo)
 │   ├── remote/
 │   │   ├── api/         MockProductApi — simulates real backend
