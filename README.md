@@ -9,7 +9,7 @@
 lib/
 ├── main.dart
 ├── data/
-│   ├── local/           SQLite via sqflite (cart, orders, promo)
+│   ├── local/   SQLite via sqflite (cart, orders, promo)
 │   ├── remote/
 │   │   ├── api/         MockProductApi — simulates real backend
 │   │   └── dto/         Data Transfer Objects
