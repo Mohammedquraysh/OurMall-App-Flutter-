@@ -6,30 +6,50 @@
 
 
 ## Architecture
-lib/
-├── main.dart
-data/
-│   ├── local/   SQLite via sqflite (cart, orders, promo)
-│   ├── remote/
-│   │   ├── api/         MockProductApi — simulates real backend
-│   │   └── dto/         Data Transfer Objects
-│   └── repository/      Repository implementations + mappers
-├── domain/
-│   ├── model/           Pure Dart models (Product, Cart, Order…)
-│   ├── repository/      Abstract interfaces
-│   └── usecase/         One use case per action
-├── presentation/
-│   ├── theme/           Light + dark Material3 theme
-│   ├── navigation/      GoRouter with animated transitions
-│   ├── providers/       Riverpod DI + state providers
-│   ├── widgets/         Shared reusable widgets
-│   └── screen/
-│       ├── products/    ProductListScreen + ProductDetailScreen
-│       ├── cart/        CartScreen
-│       ├── checkout/    CheckoutScreen
-│       └── order/       OrderListScreen + OrderDetailScreen
-└── util/                Extension functions (formatPrice, formatCountdown)
 
+The project is organized into multiple layers for better scalability and maintainability.
+
+lib/main.dart – Entry point of the application.
+
+Data Layer
+
+Local: Uses SQLite (via sqflite) for storing cart, orders, and promo data.
+
+Remote: Contains API-related logic, including a mock product API that simulates a real backend, and DTOs (Data Transfer Objects).
+
+Repository: Handles data operations and mapping between data and domain models.
+
+Domain Layer
+
+Model: Contains pure Dart models such as Product, Cart, and Order.
+
+Repository: Defines abstract interfaces for data operations.
+
+Use Case: Contains business logic, with one use case per action.
+
+Presentation Layer
+
+Theme: Supports light and dark themes using Material 3.
+
+Navigation: Uses GoRouter with animated transitions.
+
+Providers: Manages dependency injection and state using Riverpod.
+
+Widgets: Contains reusable UI components.
+
+Screens:
+
+Products: Product list and product detail screens.
+
+Cart: Cart screen.
+
+Checkout: Checkout screen.
+
+Order: Order list and order detail screens.
+
+Utils
+
+Contains helper functions such as formatting price and countdown.
 
 ## Features
 
