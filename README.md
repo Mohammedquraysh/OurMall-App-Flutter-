@@ -7,31 +7,37 @@
 ---
 
 ## Architecture
+Root
 
-```
-lib/
-├── main.dart
-├── data/
-│   ├── local/           SQLite via sqflite (cart, orders, promo)
-│   ├── remote/
-│   │   ├── api/         MockProductApi — simulates real backend
-│   │   └── dto/         Data Transfer Objects
-│   └── repository/      Repository implementations + mappers
-├── domain/
-│   ├── model/           Pure Dart models (Product, Cart, Order…)
-│   ├── repository/      Abstract interfaces
-│   └── usecase/         One use case per action
-├── presentation/
-│   ├── theme/           Light + dark Material3 theme
-│   ├── navigation/      GoRouter with animated transitions
-│   ├── providers/       Riverpod DI + state providers
-│   ├── widgets/         Shared reusable widgets
-│   └── screen/
-│       ├── products/    ProductListScreen + ProductDetailScreen
-│       ├── cart/        CartScreen
-│       ├── checkout/    CheckoutScreen
-│       └── order/       OrderListScreen + OrderDetailScreen
-└── util/                Extension functions (formatPrice, formatCountdown)
+main.dart — App entry point
+
+data/
+
+local/ => SQLite via sqflite (cart, orders, promo)
+remote/api/ => MockProductApi — simulates real backend
+remote/dto/ => Data Transfer Objects
+repository/ => Repository implementations + mappers
+
+domain/
+
+model/ => Pure Dart models — Product, Cart, Order, …
+repository/ => Abstract interfaces
+usecase/ => One use case per action
+
+presentation/
+
+theme/ => Light + dark Material 3 theme
+navigation/ => GoRouter with animated transitions
+providers/ => Riverpod DI + state providers
+widgets/ => Shared reusable widgets
+screen/products/ => ProductListScreen, ProductDetailScreen
+screen/cart/ => CartScreen
+screen/checkout/ => CheckoutScreen
+screen/order/ => OrderListScreen, OrderDetailScreen
+
+Other
+
+util/ => Extension functions — formatPrice, formatCountdown
 ```
 
 ---
